@@ -1,9 +1,14 @@
 @extends('layouts.front')
 
 @section('content')
+<section class="bg-primary text-white banner-web text-center">
+    <div class="container py-5">
+        <h1 class="display-3 fw-bold">Privacy Policy</h1>
+        <p class="lead">Our Terms of Use govern Your use of our Service. </p>
+    </div>
+</section>
 <section class="py-5">
     <div class="container">
-        <h1 class="section-title text-center">Privacy Policy</h1>
         <div class="row justify-content-center">
             <div class="col-md-8 text-muted">
                 <p>Last updated: {{ date('F d, Y') }}</p>

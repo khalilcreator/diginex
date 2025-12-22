@@ -5,7 +5,7 @@
 <section class="py-5 bg-primary text-white text-center">
     <div class="container py-5">
         <h1 class="display-3 fw-bold mb-3">About DiginixHub</h1>
-        <p class="lead mb-4 mx-auto" style="max-width: 700px;">We are a digital innovation agency dedicated to transforming ideas into impactful reality.</p>
+        <p class="lead mb-4 mx-auto" style="max-width: 700px;">A digital innovation agency dedicated to transforming ideas into impactful reality.</p>
     </div>
 </section>
 
