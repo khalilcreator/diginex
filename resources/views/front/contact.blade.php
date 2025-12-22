@@ -114,8 +114,8 @@
         </div>
     </div>
 </section>
-@endsection
--4">
+
+                 <div>
                      <div class="flex-shrink-0 btn-lg-square bg-light text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
                          <i class="fas fa-envelope fa-lg"></i>
                      </div>
@@ -135,7 +135,7 @@
                      </div>
                  </div>
                  
-                 <div class="mt-5">
+            <div class="mt-5">
                      <h5 class="fw-bold mb-3">Follow Us</h5>
                      <div class="d-flex gap-3">
                          <a href="#" class="btn btn-outline-secondary rounded-circle"><i class="fab fa-facebook-f"></i></a>
