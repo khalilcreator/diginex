@@ -33,10 +33,25 @@ class BlogController extends Controller
         ]);
 
         $imagePath = null;
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $imageName = time() . '_' . $image->getClientOriginalName();
+        //     $image->move(public_path('uploads/blog'), $imageName);
+        //     $imagePath = 'uploads/blog/' . $imageName;
+        // }
         if ($request->hasFile('image')) {
             $image = $request->file('image');
+
             $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('uploads/blog'), $imageName);
+
+            $destination = base_path('../uploads/blog');
+
+            if (!file_exists($destination)) {
+                mkdir($destination, 0755, true);
+            }
+
+            $image->move($destination, $imageName);
+
             $imagePath = 'uploads/blog/' . $imageName;
         }
 
@@ -74,14 +89,30 @@ class BlogController extends Controller
         $blog = \App\Models\Blog::findOrFail($id);
         
         if ($request->hasFile('image')) {
+
+            // Absolute path to public_html/uploads/blog
+            $uploadPath = base_path('../uploads/blog');
+
             // Delete old image if exists
-            if ($blog->image && file_exists(public_path($blog->image))) {
-                unlink(public_path($blog->image));
+            if ($blog->image) {
+                $oldImagePath = base_path('../' . $blog->image);
+
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
             }
-            
+
+            // Upload new image
             $image = $request->file('image');
             $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('uploads/blog'), $imageName);
+
+            if (!file_exists($uploadPath)) {
+                mkdir($uploadPath, 0755, true);
+            }
+
+            $image->move($uploadPath, $imageName);
+
+            // Save relative path for URL
             $blog->image = 'uploads/blog/' . $imageName;
         }
 
