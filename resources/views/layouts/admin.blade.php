@@ -29,7 +29,7 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <!-- <div class="version-text">Version 1.7</div> -->
-                <h5 class="text-white">ADMIN PANEL</h5>
+                <h5 class="text-white">DiginixHub ADMIN</h5>
             </div>
 
             <div class="section-header">MAIN CONTENTS</div>
