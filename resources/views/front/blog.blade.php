@@ -1,13 +1,14 @@
 @extends('layouts.front')
 
 @section('content')
-<section class="py-5">
+
     <section class="bg-primary text-white banner-web text-center">
         <div class="container py-5">
             <h1 class="display-3 fw-bold">Our Blog</h1>
             <p class="lead">Providing top-notch digital solutions for your business.</p>
         </div>
     </section>
+<section class="py-5">
     <div class="container mt-5">
         
         
