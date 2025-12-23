@@ -34,7 +34,10 @@ class BlogController extends Controller
 
         $imagePath = null;
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('uploads/blog', 'public');
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('uploads/blog'), $imageName);
+            $imagePath = 'uploads/blog/' . $imageName;
         }
 
         \App\Models\Blog::create([
@@ -71,8 +74,15 @@ class BlogController extends Controller
         $blog = \App\Models\Blog::findOrFail($id);
         
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('uploads/blog', 'public');
-            $blog->image = $imagePath;
+            // Delete old image if exists
+            if ($blog->image && file_exists(public_path($blog->image))) {
+                unlink(public_path($blog->image));
+            }
+            
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('uploads/blog'), $imageName);
+            $blog->image = 'uploads/blog/' . $imageName;
         }
 
         $blog->title = $request->title;
@@ -89,6 +99,12 @@ class BlogController extends Controller
     public function destroy(string $id)
     {
         $blog = \App\Models\Blog::findOrFail($id);
+        
+        // Delete image if exists
+        if ($blog->image && file_exists(public_path($blog->image))) {
+            unlink(public_path($blog->image));
+        }
+        
         $blog->delete();
         return redirect()->route('admin.blog.index')->with('status', 'Blog deleted successfully!');
     }

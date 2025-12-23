@@ -14,7 +14,7 @@
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-md-6 mb-4 mb-md-0">
-                <img src="https://source.unsplash.com/random/600x600/?office,team" alt="Our Team" class="img-fluid rounded-4 shadow-lg">
+                <img src="https://static.vecteezy.com/system/resources/previews/007/931/696/non_2x/about-us-button-about-us-text-template-for-website-about-us-icon-flat-style-vector.jpg" alt="Our Team" class="img-fluid rounded-4 shadow-lg">
             </div>
             <div class="col-md-6 ps-md-5">
                 <span class="text-primary fw-bold text-uppercase ls-1">Who We Are</span>
