@@ -63,7 +63,7 @@
                             <div class="col-md-6">
                                 <div class="card h-100">
                                     @if($favorite->blog->image)
-                                        <img src="{{ asset('storage/'.$favorite->blog->image) }}" class="card-img-top" alt="{{ $favorite->blog->title }}" style="height: 200px; object-fit: cover;">
+                                        <img src="{{ asset($favorite->blog->image) }}" class="card-img-top" alt="{{ $favorite->blog->title }}" style="height: 200px; object-fit: cover;">
                                     @endif
                                     <div class="card-body">
                                         <h5 class="card-title">

@@ -37,7 +37,7 @@
                 <label>Current Image</label>
                 <div>
                     @if($blog->image)
-                        <img src="{{ asset('storage/'.$blog->image) }}" width="100" alt="Img">
+                        <img src="{{ asset($blog->image) }}" width="100" alt="Img">
                     @endif
                 </div>
             </div>

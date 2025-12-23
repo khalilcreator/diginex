@@ -61,7 +61,7 @@
             <div class="col-md-4">
                 <div class="custom-card card h-100">
                     @if($blog->image)
-                        <img src="{{ asset('storage/'.$blog->image) }}" class="card-img-top" alt="{{ $blog->title }}">
+                        <img src="{{ asset($blog->image) }}" class="card-img-top" alt="{{ $blog->title }}">
                     @else
                          <div class="bg-primary text-white d-flex align-items-center justify-content-center card-img-top">
                              No Image

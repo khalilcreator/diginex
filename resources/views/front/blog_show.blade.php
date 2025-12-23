@@ -20,7 +20,7 @@
                 @endauth
 
                 @if($blog->image)
-                    <img src="{{ asset('storage/'.$blog->image) }}" class="img-fluid rounded mb-4 w-100" alt="{{ $blog->title }}">
+                    <img src="{{ asset($blog->image) }}" class="img-fluid rounded mb-4 w-100" alt="{{ $blog->title }}">
                 @endif
 
                 <div class="blog-content">
@@ -42,7 +42,7 @@
             <div class="col-md-4">
                 <div class="custom-card card h-100">
                     @if($rBlog->image)
-                        <img src="{{ asset('storage/'.$rBlog->image) }}" class="card-img-top" alt="{{ $rBlog->title }}" style="height: 200px; object-fit: cover;">
+                        <img src="{{ asset($rBlog->image) }}" class="card-img-top" alt="{{ $rBlog->title }}" style="height: 200px; object-fit: cover;">
                     @else
                          <div class="bg-primary text-white d-flex align-items-center justify-content-center card-img-top" style="height: 200px;">
                              No Image

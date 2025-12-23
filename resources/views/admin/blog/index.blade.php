@@ -26,7 +26,7 @@
                     <td>{{ $index + 1 }}</td>
                     <td>
                         @if($blog->image)
-                            <img src="{{ asset('storage/'.$blog->image) }}" width="50" alt="Img">
+                            <img src="{{ asset($blog->image) }}" width="50" alt="Img">
                         @endif
                     </td>
                     <td>{{ $blog->title }}</td>
